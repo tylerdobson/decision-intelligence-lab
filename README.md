@@ -58,7 +58,7 @@ No required secrets. The included sample data is for demo/reproducibility use.
 Demo assets will be added in the next release pass.
 
 ## Security / Privacy Notes
-The public copy excludes old history and private notes. Included data is sample/demo material only.
+The public copy excludes old history and non-public working notes. Included data is sample/demo material only.
 
 ## Limitations
 - Not a production forecasting system.
