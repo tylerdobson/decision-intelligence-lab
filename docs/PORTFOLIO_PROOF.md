@@ -1,6 +1,6 @@
 # Validation Notes
 
-This document explains how to verify that Retail KPI & Forecasting Sandbox is a working analytics product, not only a static code sample.
+This document explains how to verify that Decision Intelligence Lab is a working analytics sandbox, not only a static code sample.
 
 Finding: The recommendation engine flags low-margin, high-volume segments as a risk; one example action is to improve product economics before pushing more volume.
 
@@ -42,7 +42,7 @@ The capture workflow writes:
 - `assets/demo/data-explorer.png`
 - `assets/demo/demo-poster.png`
 - `assets/demo/demo.webm`
-- `assets/demo/demo.mp4` when `ffmpeg` is available
+- `assets/demo/demo.gif`
 - `assets/demo/linkedin-cover.png`
 - `assets/demo/media_manifest.json`
 
@@ -57,7 +57,7 @@ The media script uses only modeled demo data and starts the app locally on a fix
 
 ## Project Positioning
 
-Retail KPI & Forecasting Sandbox demonstrates:
+Decision Intelligence Lab demonstrates:
 
 - Analytics engineering
 - Streamlit product design

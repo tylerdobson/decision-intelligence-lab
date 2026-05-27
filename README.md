@@ -55,7 +55,26 @@ No required secrets. The included sample data is for demo/reproducibility use.
 ```
 
 ## Demo / Screenshots
-Demo assets will be added in the next release pass.
+Demo assets are generated from the included modeled dataset:
+
+- `assets/demo/hero.png`
+- `assets/demo/dashboard-overview.png`
+- `assets/demo/kpi-explorer.png`
+- `assets/demo/forecasting-lab.png`
+- `assets/demo/scenario-analysis.png`
+- `assets/demo/executive-recommendations.png`
+- `assets/demo/data-explorer.png`
+- `assets/demo/demo.webm`
+- `assets/demo/demo.gif`
+
+MP4 is not checked in because the available local ffmpeg build only supports the WebM path used by Playwright.
+
+Regenerate them with:
+
+```powershell
+.\.venv\Scripts\python.exe -m playwright install chromium
+.\.venv\Scripts\python.exe scripts\capture_decision_lab_media.py
+```
 
 ## Security / Privacy Notes
 The public copy excludes old history and non-public working notes. Included data is sample/demo material only.
@@ -63,12 +82,12 @@ The public copy excludes old history and non-public working notes. Included data
 ## Limitations
 - Not a production forecasting system.
 - Outputs are analytical examples, not business advice.
-- Demo assets will be added in the next release pass.
+- Demo media uses modeled sample data, not real company records.
 
 ## Roadmap
-- Add screenshot set.
-- Add a short walkthrough GIF/video.
+- Add a concise walkthrough writeup.
 - Tighten methodology notes after reviewer feedback.
+- Add deployment notes only if a real public deployment exists.
 
 ## License
 MIT License. See `LICENSE`.

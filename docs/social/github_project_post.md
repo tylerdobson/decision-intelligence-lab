@@ -1,8 +1,8 @@
 # GitHub Project Announcement
 
-## Retail KPI & Forecasting Sandbox
+## Decision Intelligence Lab
 
-Retail KPI & Forecasting Sandbox is a Streamlit analytics workflow that turns modeled retail operating data into KPIs, forecasts, scenario analysis, exports, and executive recommendations.
+Decision Intelligence Lab is a Streamlit analytics workflow that turns modeled retail operating data into KPIs, forecast ranges, scenario analysis, exports, and executive recommendations.
 
 The main idea: do not just show charts. Help answer what decision someone should make next.
 
@@ -33,4 +33,4 @@ This project is built as a public-safe analytics project. It uses deterministic 
 
 Repository:
 
-https://github.com/tylerdobson/mvp-for-a-decision-intelligence-lab
+https://github.com/tylerdobson/decision-intelligence-lab

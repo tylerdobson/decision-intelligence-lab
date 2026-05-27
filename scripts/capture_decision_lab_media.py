@@ -160,6 +160,7 @@ def _capture_media() -> list[dict[str, str | int]]:
 
         _create_poster_assets(captured)
         _convert_to_mp4_if_available(webm_path, captured)
+        _convert_to_gif_if_available(webm_path, captured)
     return captured
 
 
@@ -223,6 +224,34 @@ def _convert_to_mp4_if_available(webm_path: Path, captured: list[dict[str, str |
         return
     _assert_non_empty(mp4_path)
     captured.append({"file": "demo.mp4", "bytes": mp4_path.stat().st_size})
+
+
+def _convert_to_gif_if_available(webm_path: Path, captured: list[dict[str, str | int]]) -> None:
+    if not webm_path.exists():
+        return
+    ffmpeg = shutil.which("ffmpeg")
+    if not ffmpeg:
+        print("ffmpeg was not found. Keeping demo.webm only.")
+        return
+    gif_path = MEDIA_DIR / "demo.gif"
+    command = [
+        ffmpeg,
+        "-y",
+        "-i",
+        str(webm_path),
+        "-vf",
+        "fps=8,scale=960:-1:flags=lanczos",
+        "-loop",
+        "0",
+        str(gif_path),
+    ]
+    result = subprocess.run(command, capture_output=True, text=True)
+    if result.returncode != 0:
+        print("ffmpeg GIF conversion failed. Keeping demo.webm only.")
+        print(result.stderr)
+        return
+    _assert_non_empty(gif_path)
+    captured.append({"file": "demo.gif", "bytes": gif_path.stat().st_size})
 
 
 def _write_manifest(media: list[dict[str, str | int]]) -> None:

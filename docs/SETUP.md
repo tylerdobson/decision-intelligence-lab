@@ -1,12 +1,12 @@
 # Setup Guide
 
-Retail KPI & Forecasting Sandbox runs locally with Python, Streamlit, pandas, Plotly, SQLite, and pytest. It does not require external APIs, paid services, or credentials.
+Decision Intelligence Lab runs locally with Python, Streamlit, pandas, Plotly, SQLite, and pytest. It does not require external APIs, paid services, or credentials.
 
 ## Mac/Linux
 
 ```bash
-git clone https://github.com/tylerdobson/mvp-for-a-decision-intelligence-lab.git
-cd mvp-for-a-decision-intelligence-lab
+git clone https://github.com/tylerdobson/decision-intelligence-lab.git
+cd decision-intelligence-lab
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
@@ -19,8 +19,8 @@ Open `http://localhost:8501`.
 ## Windows PowerShell
 
 ```powershell
-git clone https://github.com/tylerdobson/mvp-for-a-decision-intelligence-lab.git
-cd mvp-for-a-decision-intelligence-lab
+git clone https://github.com/tylerdobson/decision-intelligence-lab.git
+cd decision-intelligence-lab
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
@@ -51,7 +51,7 @@ Capture project media:
 python scripts/capture_decision_lab_media.py
 ```
 
-If `ffmpeg` is installed, the script writes both `demo.webm` and `demo.mp4`. If `ffmpeg` is not installed, the WebM video is kept.
+The checked-in public media set uses `demo.webm` and `demo.gif`. A local MP4 can be generated later if a full FFmpeg install is available.
 
 ## Troubleshooting
 
