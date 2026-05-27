@@ -71,13 +71,13 @@ The output includes estimated revenue, profit, gross margin, retention, risk lev
 
 ### Screenshot Workflow
 
-`scripts/capture_decision_lab_media.py` starts the app, captures public-safe screenshots with Playwright, and writes `assets/demo/media_manifest.json`.
+`scripts/capture_decision_lab_media.py` starts the app, captures review-safe screenshots with Playwright, and writes `assets/demo/media_manifest.json`.
 
 ## Design Principles
 
 - Decision support over chart dumping.
 - Explainable formulas over black-box complexity.
-- Synthetic public-safe data only.
+- Synthetic review-safe data only.
 - Local-first setup with no API keys.
 - Tests for business logic.
 - Validation screenshots that the app actually runs.

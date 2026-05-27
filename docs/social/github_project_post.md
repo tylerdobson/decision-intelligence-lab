@@ -29,7 +29,7 @@ Tech stack:
 - Playwright
 - pytest
 
-This project is built as a public-safe analytics project. It uses deterministic modeled data and does not require external APIs, paid services, private credentials, or real financial data.
+This project is built as a review-safe analytics project. It uses deterministic modeled data and does not require external APIs, paid services, private credentials, or real financial data.
 
 Repository:
 

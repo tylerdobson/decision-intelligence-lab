@@ -1,6 +1,6 @@
 # Decision Intelligence Lab
 
-Streamlit analytics sandbox for KPI review, scenario testing, forecast ranges, exports, and recommendation logic. The project uses modeled sample data so the workflow is reproducible and safe to review publicly.
+Streamlit analytics sandbox for KPI review, scenario testing, forecast ranges, exports, and recommendation logic. The project uses modeled sample data so the workflow is reproducible and safe to review externally.
 
 - Validation notes: [`docs/PORTFOLIO_PROOF.md`](docs/PORTFOLIO_PROOF.md)
 - Methodology: [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md)
@@ -22,7 +22,7 @@ Dashboards often show metrics without making the calculation path or recommendat
 - SQLite setup and SQL scripts for local analytical storage.
 - KPI, forecasting, scenario, recommendation, and report-export modules.
 - pytest coverage for calculation and recommendation logic.
-- Public-safe screenshots and static proof assets generated from the modeled local app.
+- Review-safe screenshots and static proof assets generated from the modeled local app.
 
 ## Evidence
 
@@ -121,10 +121,10 @@ No secrets are required.
 
 ## Security / Privacy Notes
 
-- Public history is clean release history.
+- Release history is clean release history.
 - Included data is modeled sample data.
 - No credentials, local-only working notes, non-project communications, or private datasets are included.
-- Screenshots are generated from the public-safe local app path.
+- Screenshots are generated from the review-safe local app path.
 
 ## Roadmap
 

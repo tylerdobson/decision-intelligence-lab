@@ -124,7 +124,7 @@ def _render_sidebar(data: pd.DataFrame) -> tuple[str, pd.DataFrame]:
         st.sidebar.caption(
             f"Filtered window: {filtered['month'].min().date()} to {filtered['month'].max().date()}"
         )
-    st.sidebar.caption("Modeled retail data is safe for public demos.")
+    st.sidebar.caption("Modeled retail data is safe for demos.")
     return section_label, filtered
 
 
@@ -412,7 +412,7 @@ def render_data_explorer(filtered_data: pd.DataFrame) -> None:
         )
         table = table[mask]
 
-    render_callout("Dataset note", "This is deterministic modeled retail data created for public demonstration.")
+    render_callout("Dataset note", "This is deterministic modeled retail data created for demonstration.")
     display = _format_display_table(table).sort_values("month", ascending=False)
     st.dataframe(
         display.head(250),
@@ -518,12 +518,12 @@ Retail KPI & Forecasting Sandbox demonstrates a complete analytics workflow: gen
 - Plotly dashboard visualization.
 - Explainable forecasting and scenario modeling.
 - Rule-based recommendation logic.
-- Documentation and media workflow for public validation.
+- Documentation and media workflow for review validation.
 
 ### Current dataset
 - Records: {len(data):,}
 - Date range: {data['month'].min().date()} to {data['month'].max().date()}
-- Public-safe modeled retail data only.
+- Review-safe modeled retail data only.
         """
     )
 

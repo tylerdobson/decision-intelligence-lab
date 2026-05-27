@@ -1,6 +1,6 @@
 """Capture project screenshots for Decision Intelligence Lab.
 
-The script starts the Streamlit app, captures public-safe demo screenshots with
+The script starts the Streamlit app, captures review-safe demo screenshots with
 Playwright, and writes a media manifest.
 """
 

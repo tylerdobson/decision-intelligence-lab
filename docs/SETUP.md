@@ -51,7 +51,7 @@ Capture project screenshots:
 python scripts/capture_decision_lab_media.py
 ```
 
-The checked-in public proof assets are static screenshots and a poster image only.
+The checked-in proof assets are static screenshots and a poster image only.
 
 ## Troubleshooting
 

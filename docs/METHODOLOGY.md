@@ -86,8 +86,8 @@ Each recommendation includes:
 
 ## Limitations
 
-- The dataset is modeled and deterministic for public demo use.
+- The dataset is modeled and deterministic for demo use.
 - Forecasts are directional and should be validated with actual results.
 - Scenario assumptions are simplified.
 - Recommendation rules are explainable but not exhaustive.
-- The app is intended for small-business, student, analyst, and public demo use cases.
+- The app is intended for small-business, student, analyst, and demo use cases.
