@@ -50,6 +50,10 @@
                   {
                       "file":  "demo.gif",
                       "bytes":  746312
+                  },
+                  {
+                      "file":  "narrated-demo.mp4",
+                      "bytes":  1088389
                   }
               ],
     "notes":  "Synthetic demo data only. Forecasts are directional and not guaranteed predictions."

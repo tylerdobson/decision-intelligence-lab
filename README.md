@@ -66,8 +66,9 @@ Demo assets are generated from the included modeled dataset:
 - `assets/demo/data-explorer.png`
 - `assets/demo/demo.webm`
 - `assets/demo/demo.gif`
+- `assets/demo/narrated-demo.mp4`
 
-MP4 is not checked in because the available local ffmpeg build only supports the WebM path used by Playwright.
+The narrated MP4 is generated from the public-safe WebM capture plus local text-to-speech narration. It uses modeled data only and does not claim production forecasting accuracy.
 
 Regenerate them with:
 
