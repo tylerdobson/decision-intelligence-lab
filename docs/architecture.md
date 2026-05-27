@@ -69,9 +69,9 @@ The output includes estimated revenue, profit, gross margin, retention, risk lev
 
 `src/report_exporter.py` builds CSV exports and Markdown executive summaries for business handoff.
 
-### Media Workflow
+### Screenshot Workflow
 
-`scripts/capture_decision_lab_media.py` starts the app, captures screenshots and a walkthrough video with Playwright, writes `assets/demo/media_manifest.json`, and converts WebM to MP4 when `ffmpeg` is available.
+`scripts/capture_decision_lab_media.py` starts the app, captures public-safe screenshots with Playwright, and writes `assets/demo/media_manifest.json`.
 
 ## Design Principles
 
@@ -80,4 +80,4 @@ The output includes estimated revenue, profit, gross margin, retention, risk lev
 - Synthetic public-safe data only.
 - Local-first setup with no API keys.
 - Tests for business logic.
-- Validation media that the app actually runs.
+- Validation screenshots that the app actually runs.

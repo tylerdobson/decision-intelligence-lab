@@ -15,7 +15,7 @@ The app includes:
 - Scenario modeling for marketing, price, cost, demand, and retention assumptions
 - Rule-based recommendations with priority, evidence, and action
 - Data explorer and export center
-- Automated screenshots and demo video through Playwright
+- Automated screenshots through Playwright
 - pytest coverage for the main business logic
 
 Tech stack:

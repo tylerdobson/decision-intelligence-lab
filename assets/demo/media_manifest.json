@@ -36,24 +36,12 @@
                       "bytes":  1307787
                   },
                   {
-                      "file":  "demo.webm",
-                      "bytes":  5626502
-                  },
-                  {
                       "file":  "demo-poster.png",
                       "bytes":  1414306
                   },
                   {
                       "file":  "linkedin-cover.png",
                       "bytes":  1414306
-                  },
-                  {
-                      "file":  "demo.gif",
-                      "bytes":  746312
-                  },
-                  {
-                      "file":  "narrated-demo.mp4",
-                      "bytes":  1088389
                   }
               ],
     "notes":  "Synthetic demo data only. Forecasts are directional and not guaranteed predictions."

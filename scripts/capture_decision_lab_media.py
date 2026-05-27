@@ -1,7 +1,7 @@
-"""Capture project screenshots and video for Retail KPI & Forecasting Sandbox.
+"""Capture project screenshots for Decision Intelligence Lab.
 
 The script starts the Streamlit app, captures public-safe demo screenshots with
-Playwright, records a short walkthrough video, and writes a media manifest.
+Playwright, and writes a media manifest.
 """
 
 from __future__ import annotations
@@ -22,7 +22,6 @@ MEDIA_DIR = PROJECT_ROOT / "assets" / "demo"
 PORT = 8509
 BASE_URL = f"http://127.0.0.1:{PORT}"
 VIEWPORT = {"width": 1600, "height": 1000}
-VIDEO_SIZE = {"width": 1600, "height": 1000}
 
 SCREENSHOTS = [
     ("hero.png", "executive-overview"),
@@ -46,7 +45,7 @@ def main() -> int:
         _write_manifest(media)
     finally:
         _stop_process(process)
-    print(f"Media capture complete: {MEDIA_DIR}")
+    print(f"Screenshot capture complete: {MEDIA_DIR}")
     return 0
 
 
@@ -130,8 +129,6 @@ def _capture_media() -> list[dict[str, str | int]]:
         context = browser.new_context(
             viewport=VIEWPORT,
             device_scale_factor=2,
-            record_video_dir=str(MEDIA_DIR),
-            record_video_size=VIDEO_SIZE,
         )
         page = context.new_page()
         for filename, section in SCREENSHOTS:
@@ -141,26 +138,10 @@ def _capture_media() -> list[dict[str, str | int]]:
             _assert_non_empty(path)
             captured.append({"file": filename, "bytes": path.stat().st_size})
 
-        for _, section in SCREENSHOTS[:6]:
-            _open_section(page, section)
-            page.wait_for_timeout(2200)
-
-        video = page.video
         context.close()
         browser.close()
 
-        webm_path = MEDIA_DIR / "demo.webm"
-        if video:
-            recorded_path = Path(video.path())
-            if webm_path.exists():
-                webm_path.unlink()
-            shutil.move(str(recorded_path), webm_path)
-            _assert_non_empty(webm_path)
-            captured.append({"file": "demo.webm", "bytes": webm_path.stat().st_size})
-
         _create_poster_assets(captured)
-        _convert_to_mp4_if_available(webm_path, captured)
-        _convert_to_gif_if_available(webm_path, captured)
     return captured
 
 
@@ -196,62 +177,6 @@ def _create_poster_assets(captured: list[dict[str, str | int]]) -> None:
     shutil.copyfile(source, cover)
     captured.append({"file": "demo-poster.png", "bytes": poster.stat().st_size})
     captured.append({"file": "linkedin-cover.png", "bytes": cover.stat().st_size})
-
-
-def _convert_to_mp4_if_available(webm_path: Path, captured: list[dict[str, str | int]]) -> None:
-    if not webm_path.exists():
-        return
-    ffmpeg = shutil.which("ffmpeg")
-    if not ffmpeg:
-        print("ffmpeg was not found. Keeping demo.webm only.")
-        return
-    mp4_path = MEDIA_DIR / "demo.mp4"
-    command = [
-        ffmpeg,
-        "-y",
-        "-i",
-        str(webm_path),
-        "-movflags",
-        "+faststart",
-        "-pix_fmt",
-        "yuv420p",
-        str(mp4_path),
-    ]
-    result = subprocess.run(command, capture_output=True, text=True)
-    if result.returncode != 0:
-        print("ffmpeg conversion failed. Keeping demo.webm only.")
-        print(result.stderr)
-        return
-    _assert_non_empty(mp4_path)
-    captured.append({"file": "demo.mp4", "bytes": mp4_path.stat().st_size})
-
-
-def _convert_to_gif_if_available(webm_path: Path, captured: list[dict[str, str | int]]) -> None:
-    if not webm_path.exists():
-        return
-    ffmpeg = shutil.which("ffmpeg")
-    if not ffmpeg:
-        print("ffmpeg was not found. Keeping demo.webm only.")
-        return
-    gif_path = MEDIA_DIR / "demo.gif"
-    command = [
-        ffmpeg,
-        "-y",
-        "-i",
-        str(webm_path),
-        "-vf",
-        "fps=8,scale=960:-1:flags=lanczos",
-        "-loop",
-        "0",
-        str(gif_path),
-    ]
-    result = subprocess.run(command, capture_output=True, text=True)
-    if result.returncode != 0:
-        print("ffmpeg GIF conversion failed. Keeping demo.webm only.")
-        print(result.stderr)
-        return
-    _assert_non_empty(gif_path)
-    captured.append({"file": "demo.gif", "bytes": gif_path.stat().st_size})
 
 
 def _write_manifest(media: list[dict[str, str | int]]) -> None:

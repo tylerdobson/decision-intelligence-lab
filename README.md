@@ -2,7 +2,6 @@
 
 Streamlit analytics sandbox for KPI review, scenario testing, forecast ranges, exports, and recommendation logic. The project uses modeled sample data so the workflow is reproducible and safe to review publicly.
 
-- Narrated walkthrough: [`assets/demo/narrated-demo.mp4`](assets/demo/narrated-demo.mp4)
 - Validation notes: [`docs/PORTFOLIO_PROOF.md`](docs/PORTFOLIO_PROOF.md)
 - Methodology: [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md)
 
@@ -23,7 +22,7 @@ Dashboards often show metrics without making the calculation path or recommendat
 - SQLite setup and SQL scripts for local analytical storage.
 - KPI, forecasting, scenario, recommendation, and report-export modules.
 - pytest coverage for calculation and recommendation logic.
-- Public-safe screenshots, WebM, GIF, and narrated MP4 walkthrough assets.
+- Public-safe screenshots and static proof assets generated from the modeled local app.
 
 ## Evidence
 
@@ -35,7 +34,7 @@ Dashboards often show metrics without making the calculation path or recommendat
 | Business use case | [`docs/business_use_case.md`](docs/business_use_case.md) |
 | Methodology | [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md) |
 | Tests | [`tests/`](tests/) |
-| Demo assets | [`assets/demo/`](assets/demo/) |
+| Screenshot assets | [`assets/demo/`](assets/demo/) |
 
 ## Demo / Screenshots
 
@@ -50,11 +49,10 @@ Additional captures:
 - [`assets/demo/scenario-analysis.png`](assets/demo/scenario-analysis.png)
 - [`assets/demo/executive-recommendations.png`](assets/demo/executive-recommendations.png)
 - [`assets/demo/data-explorer.png`](assets/demo/data-explorer.png)
-- [`assets/demo/demo.webm`](assets/demo/demo.webm)
-- [`assets/demo/demo.gif`](assets/demo/demo.gif)
-- [`assets/demo/narrated-demo.mp4`](assets/demo/narrated-demo.mp4)
+- [`assets/demo/demo-poster.png`](assets/demo/demo-poster.png)
+- [`assets/demo/linkedin-cover.png`](assets/demo/linkedin-cover.png)
 
-Regenerate media:
+Regenerate screenshots:
 
 ```powershell
 .\.venv\Scripts\python.exe -m playwright install chromium
@@ -69,7 +67,7 @@ Regenerate media:
 - SQLite
 - Plotly
 - pytest
-- Playwright media capture
+- Playwright screenshot capture
 
 ## Architecture
 
@@ -84,7 +82,7 @@ scripts/setup_database.py      SQLite setup
 scripts/capture_decision_lab_media.py
 tests/                         Calculation and export tests
 docs/                          Methodology and validation notes
-assets/demo/                   Screenshots and walkthroughs
+assets/demo/                   Screenshots and static proof assets
 ```
 
 ## Data Source
@@ -126,7 +124,7 @@ No secrets are required.
 - Public history is clean release history.
 - Included data is modeled sample data.
 - No credentials, local-only working notes, non-project communications, or private datasets are included.
-- Demo media is generated from the public-safe local app path.
+- Screenshots are generated from the public-safe local app path.
 
 ## Roadmap
 

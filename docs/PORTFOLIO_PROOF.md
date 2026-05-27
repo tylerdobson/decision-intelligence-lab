@@ -12,8 +12,8 @@ Finding: The recommendation engine flags low-margin, high-volume segments as a r
 - Streamlit starts with `streamlit run app.py`.
 - pytest passes.
 - compileall passes.
-- Media capture creates screenshots and video in `assets/demo/`.
-- README media links resolve to real files.
+- Screenshot capture creates static proof assets in `assets/demo/`.
+- README screenshot and documentation links resolve to real files.
 - No credentials or private data are required.
 
 ## App Validation
@@ -29,7 +29,7 @@ The dashboard includes:
 - Data Explorer with filtered table and CSV download.
 - Export Center with CSV and Markdown outputs.
 
-## Media Validation
+## Screenshot Validation
 
 The capture workflow writes:
 
@@ -41,19 +41,17 @@ The capture workflow writes:
 - `assets/demo/executive-recommendations.png`
 - `assets/demo/data-explorer.png`
 - `assets/demo/demo-poster.png`
-- `assets/demo/demo.webm`
-- `assets/demo/demo.gif`
 - `assets/demo/linkedin-cover.png`
 - `assets/demo/media_manifest.json`
 
-## How To Regenerate Validation Media
+## How To Regenerate Validation Screenshots
 
 ```bash
 python -m playwright install chromium
 python scripts/capture_decision_lab_media.py
 ```
 
-The media script uses only modeled demo data and starts the app locally on a fixed port for capture.
+The screenshot script uses only modeled demo data and starts the app locally on a fixed port for capture.
 
 ## Project Positioning
 
@@ -66,4 +64,4 @@ Decision Intelligence Lab demonstrates:
 - Forecasting with limitations
 - Scenario modeling
 - Explainable recommendation logic
-- Automated validation media generation
+- Automated validation screenshot generation

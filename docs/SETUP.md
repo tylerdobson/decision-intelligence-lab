@@ -37,7 +37,7 @@ python -m pytest
 python -m compileall -q app.py src scripts tests
 ```
 
-## Media Capture
+## Screenshot Capture
 
 Install the Playwright browser runtime once:
 
@@ -45,17 +45,16 @@ Install the Playwright browser runtime once:
 python -m playwright install chromium
 ```
 
-Capture project media:
+Capture project screenshots:
 
 ```bash
 python scripts/capture_decision_lab_media.py
 ```
 
-The checked-in public media set uses `demo.webm` and `demo.gif`. A local MP4 can be generated later if a full FFmpeg install is available.
+The checked-in public proof assets are static screenshots and a poster image only.
 
 ## Troubleshooting
 
 - If Streamlit cannot find data, run `python scripts/setup_database.py`.
 - If Playwright reports missing Chromium, run `python -m playwright install chromium`.
-- If MP4 conversion fails, use `assets/demo/demo.webm` or install `ffmpeg`.
 - If PowerShell blocks activation, run `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass` for that terminal session only.

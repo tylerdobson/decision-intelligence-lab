@@ -25,7 +25,7 @@ The app helps answer:
 - SQLite for local data storage.
 - Streamlit for the dashboard interface.
 - Plotly for charts.
-- Playwright for validation screenshots and demo video.
+- Playwright for validation screenshots.
 - pytest for testing business logic.
 
 ## How It Works
