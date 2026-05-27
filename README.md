@@ -1,94 +1,139 @@
-﻿# Decision Intelligence Lab
+# Decision Intelligence Lab
+
+Streamlit analytics sandbox for KPI review, scenario testing, forecast ranges, exports, and recommendation logic. The project uses modeled sample data so the workflow is reproducible and safe to review publicly.
+
+- Narrated walkthrough: [`assets/demo/narrated-demo.mp4`](assets/demo/narrated-demo.mp4)
+- Validation notes: [`docs/PORTFOLIO_PROOF.md`](docs/PORTFOLIO_PROOF.md)
+- Methodology: [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md)
 
 ## Overview
-A Python analytics project that turns sample business data into KPI views, forecast ranges, and recommendation-style outputs. The public copy focuses on reproducible analysis rather than production claims.
+
+Decision Intelligence Lab demonstrates how I structure an analytics product from data through explanation: load modeled operating records, calculate KPIs, expose scenario controls, generate forecast ranges, and keep recommendation evidence visible.
+
+The project is a portfolio analytics sandbox. It does not claim to forecast a real business or represent a real company.
 
 ## Problem
-Business stakeholders need a clear way to inspect KPI changes, scenario inputs, and recommendation logic without reading raw data tables.
 
-## Features
-- Sample business dataset
-- Streamlit analytics app
-- SQLite/SQL support files
-- KPI and forecast calculations
-- Tests for core logic
+Dashboards often show metrics without making the calculation path or recommendation logic reviewable. This project makes the decision workflow inspectable: data source, calculations, scenario assumptions, recommendation evidence, and limitations are all documented.
 
-## Tech Stack
-- Python
-- Pandas
-- SQLite
-- Streamlit
-- pytest
+## What I Built
 
-## Architecture
-Python modules and scripts handle data preparation, metrics, and app presentation. Tests live under `tests/`, SQL/database helpers live under `sql/` and `database/`, and docs explain methodology.
+- A Streamlit app with executive overview, KPI explorer, trend views, forecasting lab, scenario analysis, recommendation cards, data explorer, and export center.
+- A modeled dataset with 1,728 operating records for repeatable analysis.
+- SQLite setup and SQL scripts for local analytical storage.
+- KPI, forecasting, scenario, recommendation, and report-export modules.
+- pytest coverage for calculation and recommendation logic.
+- Public-safe screenshots, WebM, GIF, and narrated MP4 walkthrough assets.
 
-## Data Source
+## Evidence
 
-The repository includes sample business data for reproducible portfolio demonstration. It does not claim to represent a real company or market.
-
-## Data Limitations
-
-The analysis demonstrates workflow and logic; it should not be used for operational decisions.
-
-## Reproducibility
-
-Run setup, then tests, then the Streamlit app from the repo root.
-
-## Setup
-```powershell
-py -3.12 -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-```
-
-## Environment Variables
-No required secrets. The included sample data is for demo/reproducibility use.
-
-## How To Run
-```powershell
-.\.venv\Scripts\python.exe -m streamlit run app.py
-```
-
-## Tests
-```powershell
-.\.venv\Scripts\python.exe -m pytest
-```
+| Evidence | Location |
+| --- | --- |
+| Validation checklist | [`docs/PORTFOLIO_PROOF.md`](docs/PORTFOLIO_PROOF.md) |
+| Data dictionary | [`docs/data_dictionary.md`](docs/data_dictionary.md) |
+| Architecture notes | [`docs/architecture.md`](docs/architecture.md) |
+| Business use case | [`docs/business_use_case.md`](docs/business_use_case.md) |
+| Methodology | [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md) |
+| Tests | [`tests/`](tests/) |
+| Demo assets | [`assets/demo/`](assets/demo/) |
 
 ## Demo / Screenshots
-Demo assets are generated from the included modeled dataset:
 
-- `assets/demo/hero.png`
-- `assets/demo/dashboard-overview.png`
-- `assets/demo/kpi-explorer.png`
-- `assets/demo/forecasting-lab.png`
-- `assets/demo/scenario-analysis.png`
-- `assets/demo/executive-recommendations.png`
-- `assets/demo/data-explorer.png`
-- `assets/demo/demo.webm`
-- `assets/demo/demo.gif`
-- `assets/demo/narrated-demo.mp4`
+Demo assets are generated from the included modeled dataset.
 
-The narrated MP4 is generated from the public-safe WebM capture plus local text-to-speech narration. It uses modeled data only and does not claim production forecasting accuracy.
+![Decision Intelligence Lab dashboard](assets/demo/dashboard-overview.png)
 
-Regenerate them with:
+Additional captures:
+
+- [`assets/demo/kpi-explorer.png`](assets/demo/kpi-explorer.png)
+- [`assets/demo/forecasting-lab.png`](assets/demo/forecasting-lab.png)
+- [`assets/demo/scenario-analysis.png`](assets/demo/scenario-analysis.png)
+- [`assets/demo/executive-recommendations.png`](assets/demo/executive-recommendations.png)
+- [`assets/demo/data-explorer.png`](assets/demo/data-explorer.png)
+- [`assets/demo/demo.webm`](assets/demo/demo.webm)
+- [`assets/demo/demo.gif`](assets/demo/demo.gif)
+- [`assets/demo/narrated-demo.mp4`](assets/demo/narrated-demo.mp4)
+
+Regenerate media:
 
 ```powershell
 .\.venv\Scripts\python.exe -m playwright install chromium
 .\.venv\Scripts\python.exe scripts\capture_decision_lab_media.py
 ```
 
-## Security / Privacy Notes
-The public copy excludes old history and non-public working notes. Included data is sample/demo material only.
+## Tech Stack
 
-## Limitations
-- Not a production forecasting system.
-- Outputs are analytical examples, not business advice.
-- Demo media uses modeled sample data, not real company records.
+- Python
+- Streamlit
+- Pandas
+- SQLite
+- Plotly
+- pytest
+- Playwright media capture
+
+## Architecture
+
+```text
+app.py                         Streamlit app entrypoint
+src/kpi_engine.py              KPI calculations
+src/forecasting.py             Forecast range helpers
+src/scenario_engine.py         Scenario controls and impact logic
+src/recommendation_engine.py   Explainable recommendation rules
+src/report_exporter.py         CSV and Markdown export helpers
+scripts/setup_database.py      SQLite setup
+scripts/capture_decision_lab_media.py
+tests/                         Calculation and export tests
+docs/                          Methodology and validation notes
+assets/demo/                   Screenshots and walkthroughs
+```
+
+## Data Source
+
+The repository includes modeled sample business data for reproducibility. It is not private company data and should not be read as market or operational evidence from a real organization.
+
+## Data Limitations
+
+- Forecasts are directional examples.
+- Recommendations demonstrate logic and evidence framing.
+- Outputs are not business advice.
+
+## Setup
+
+```powershell
+py -3.12 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe scripts\setup_database.py
+```
+
+## Environment Variables
+
+No secrets are required.
+
+## How To Run
+
+```powershell
+.\.venv\Scripts\python.exe -m streamlit run app.py
+```
+
+## Tests
+
+```powershell
+.\.venv\Scripts\python.exe -m pytest
+```
+
+## Security / Privacy Notes
+
+- Public history is clean release history.
+- Included data is modeled sample data.
+- No credentials, local-only working notes, non-project communications, or private datasets are included.
+- Demo media is generated from the public-safe local app path.
 
 ## Roadmap
-- Add a concise walkthrough writeup.
-- Tighten methodology notes after reviewer feedback.
-- Add deployment notes only if a real public deployment exists.
+
+- Add a short written walkthrough for each dashboard tab.
+- Add CI for tests and media-link validation.
+- Add additional scenario examples while keeping source assumptions explicit.
 
 ## License
-MIT License. See `LICENSE`.
+
+MIT License. See [`LICENSE`](LICENSE).
